@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NEXUS // GAME LIBRARY</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background">
+        <div class="aurora aurora-one"></div>
+        <div class="aurora aurora-two"></div>
+        <div class="aurora aurora-three"></div>
+        <div class="grid-floor"></div>
+        <div id="particles"></div>
+        <div class="scanlines"></div>
+        <div class="noise"></div>
+    </div>
+
+
+    <div class="app">
+
+        <!-- NAVBAR -->
+
+        <nav class="navbar">
+
+            <div class="logo-area">
+
+                <div class="logo-mark"></div>
+
+                <div class="logo-text">
+                    <strong>NEXUS</strong>
+
+                    <span>
+                        GAME LIBRARY
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="nav-center">
+
+                <div class="live-indicator">
+                    <span class="live-dot"></span>
+                    LIBRARY ONLINE
+                </div>
+
+            </div>
+
+
+            <div class="nav-right">
+
+                <div
+                    class="clock"
+                    id="clock">
+                    00:00:00
+                </div>
+
+                <button
+                    class="icon-button"
+                    id="fullscreenButton"
+                    type="button">
+                    ⛶
+                </button>
+
+            </div>
+
+        </nav>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-left">
+
+                <div class="eyebrow">
+                    <span></span>
+                    GAME DATABASE
+                </div>
+
+
+                <h1>
+                    GAME
+                    <br>
+                    <span>LIBRARY</span>
+                </h1>
+
+
+                <p class="hero-description">
+                    Welcome to the Nexus game library.
+                    Select a title below to establish
+                    a secure game session.
+                </p>
+
+
+                <div class="terminal-line">
+
+                    <span class="terminal-prefix">
+                        >
+                    </span>
+
+                    <span id="terminalText">
+                        scanning game database...
+                    </span>
+
+                    <span class="typing-cursor">
+                        _
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-right">
+
+                <div class="orb">
+
+                    <div class="orb-ring ring-one"></div>
+                    <div class="orb-ring ring-two"></div>
+                    <div class="orb-ring ring-three"></div>
+
+                    <div class="orb-core">
+                        <span></span>
+                    </div>
+
+                </div>
+
+
+                <div class="orb-label">
+
+                    DATABASE STATUS
+
+                    <span>
+                        ● ONLINE
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GAME HEADER -->
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-number">
+                    01
+                </span>
+
+                <span class="section-title">
+                    AVAILABLE GAMES
+                </span>
+
+            </div>
+
+            <span class="section-hint">
+                SELECT A TITLE TO LAUNCH →
+            </span>
+
+        </div>
+
+
+        <!-- GAME GRID -->
+
+        <section class="modules">
+
+
+            <!-- GAME 01 -->
+
+            <button
+                class="module game-module"
+                type="button"
+                data-game="https://cdn.jsdelivr.net/gh/YOUR-USERNAME/YOUR-GAME-REPO@main/index.html">
+
+                <span class="module-number">
+                    01
+                </span>
+
+                <div class="module-top">
+
+                    <div class="module-icon">
+                        ◈
+                    </div>
+
+                    <span class="module-status">
+                        READY
+                    </span>
+
+                </div>
+
+                <div class="module-body">
+
+                    <h2>
+                        GAME ONE
+                    </h2>
+
+                    <p>
+                        Launch game one.
+                    </p>
+
+                </div>
+
+                <div class="module-bottom">
+
+                    <span>
+                        LAUNCH
+                    </span>
+
+                    <span class="module-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+            </button>
+
+
+            <!-- GAME 02 -->
+
+            <button
+                class="module game-module"
+                type="button"
+                data-game="https://cdn.jsdelivr.net/gh/YOUR-USERNAME/YOUR-GAME-REPO-2@main/index.html">
+
+                <span class="module-number">
+                    02
+                </span>
+
+                <div class="module-top">
+
+                    <div class="module-icon">
+                        ◉
+                    </div>
+
+                    <span class="module-status">
+                        READY
+                    </span>
+
+                </div>
+
+                <div class="module-body">
+
+                    <h2>
+                        GAME TWO
+                    </h2>
+
+                    <p>
+                        Launch game two.
+                    </p>
+
+                </div>
+
+                <div class="module-bottom">
+
+                    <span>
+                        LAUNCH
+                    </span>
+
+                    <span class="module-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+            </button>
+
+
+            <!-- GAME 03 -->
+
+            <button
+                class="module game-module"
+                type="button"
+                data-game="https://cdn.jsdelivr.net/gh/YOUR-USERNAME/YOUR-GAME-REPO-3@main/index.html">
+
+                <span class="module-number">
+                    03
+                </span>
+
+                <div class="module-top">
+
+                    <div class="module-icon">
+                        ⚡
+                    </div>
+
+                    <span class="module-status">
+                        READY
+                    </span>
+
+                </div>
+
+                <div class="module-body">
+
+                    <h2>
+                        GAME THREE
+                    </h2>
+
+                    <p>
+                        Launch game three.
+                    </p>
+
+                </div>
+
+                <div class="module-bottom">
+
+                    <span>
+                        LAUNCH
+                    </span>
+
+                    <span class="module-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+            </button>
+
+
+            <!-- GAME 04 -->
+
+            <button
+                class="module game-module featured"
+                type="button"
+                data-game="https://cdn.jsdelivr.net/gh/YOUR-USERNAME/YOUR-GAME-REPO-4@main/index.html">
+
+                <span class="module-number">
+                    04
+                </span>
+
+                <div class="module-top">
+
+                    <div class="module-icon">
+                        ✦
+                    </div>
+
+                    <span class="module-status">
+                        FEATURED
+                    </span>
+
+                </div>
+
+                <div class="module-body">
+
+                    <h2>
+                        GAME FOUR
+                    </h2>
+
+                    <p>
+                        Launch game four.
+                    </p>
+
+                </div>
+
+                <div class="module-bottom">
+
+                    <span>
+                        LAUNCH
+                    </span>
+
+                    <span class="module-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+            </button>
+
+        </section>
+
+
+        <!-- STATUS -->
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-number">
+                    02
+                </span>
+
+                <span class="section-title">
+                    LIBRARY STATUS
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <section class="stats">
+
+            <div class="stat">
+
+                <div class="stat-label">
+                    DATABASE
+                </div>
+
+                <div class="stat-value">
+                    ONLINE
+                </div>
+
+                <div class="stat-sub">
+                    DATABASE AVAILABLE
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-label">
+                    TITLES
+                </div>
+
+                <div class="stat-value">
+                    04
+                </div>
+
+                <div class="stat-sub">
+                    AVAILABLE GAMES
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-label">
+                    SESSION
+                </div>
+
+                <div
+                    class="stat-value"
+                    id="sessionTime">
+                    00:00
+                </div>
+
+                <div class="stat-sub">
+                    CURRENT SESSION
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-label">
+                    STATUS
+                </div>
+
+                <div class="stat-value active">
+                    READY
+                </div>
+
+                <div class="stat-sub">
+                    AWAITING LAUNCH
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            <div>
+
+                <span class="footer-dot"></span>
+
+                FROGS // NEXUS
+
+            </div>
+
+            <div>
+                GAME DATABASE ONLINE
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
