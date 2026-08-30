@@ -3,9 +3,7 @@
    ========================================================= */
 
 
-/* =========================================================
-   CLOCK
-   ========================================================= */
+/* CLOCK */
 
 function updateClock() {
 
@@ -16,30 +14,25 @@ function updateClock() {
 
     const now = new Date();
 
-    const hours =
+    const h =
         String(now.getHours()).padStart(2, "0");
 
-    const minutes =
+    const m =
         String(now.getMinutes()).padStart(2, "0");
 
-    const seconds =
+    const s =
         String(now.getSeconds()).padStart(2, "0");
 
     clock.textContent =
-        `${hours}:${minutes}:${seconds}`;
+        `${h}:${m}:${s}`;
 }
 
 updateClock();
 
-setInterval(
-    updateClock,
-    1000
-);
+setInterval(updateClock, 1000);
 
 
-/* =========================================================
-   SESSION TIMER
-   ========================================================= */
+/* SESSION TIMER */
 
 let sessionSeconds = 0;
 
@@ -62,59 +55,49 @@ function updateSession() {
         `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 }
 
-setInterval(
-    updateSession,
-    1000
-);
+setInterval(updateSession, 1000);
 
 
-/* =========================================================
-   TERMINAL TEXT
-   ========================================================= */
+/* TERMINAL */
 
-const terminalText =
+const terminal =
     document.getElementById("terminalText");
 
-const messages = [
-    "scanning game database...",
+const terminalMessages = [
+    "scanning game archive...",
     "04 titles detected.",
     "checking game integrity...",
     "all systems nominal.",
-    "game systems ready.",
+    "game archive ready.",
     "awaiting launch command..."
 ];
 
-let messageIndex = 0;
+let terminalIndex = 0;
 
-function cycleTerminal() {
+function updateTerminal() {
 
-    if (!terminalText) return;
+    if (!terminal) return;
 
-    messageIndex =
-        (messageIndex + 1) %
-        messages.length;
-
-    terminalText.style.opacity = "0";
+    terminal.style.opacity = "0";
 
     setTimeout(() => {
 
-        terminalText.textContent =
-            messages[messageIndex];
+        terminalIndex =
+            (terminalIndex + 1) %
+            terminalMessages.length;
 
-        terminalText.style.opacity = "1";
+        terminal.textContent =
+            terminalMessages[terminalIndex];
+
+        terminal.style.opacity = "1";
 
     }, 200);
 }
 
-setInterval(
-    cycleTerminal,
-    3000
-);
+setInterval(updateTerminal, 3000);
 
 
-/* =========================================================
-   PARTICLES
-   ========================================================= */
+/* PARTICLES */
 
 const particleContainer =
     document.getElementById("particles");
@@ -150,24 +133,16 @@ if (particleContainer) {
 
 /* =========================================================
    GAME LAUNCHER
-   =========================================================
 
-   Flow:
-
-   Google Sites
+   Click game
        ↓
-   Game Library
+   Open about:blank
        ↓
-   Click button
-       ↓
-   New about:blank tab
-       ↓
-   Game CDN URL loads
-*/
-
+   Load game CDN URL
+   ========================================================= */
 
 document
-    .querySelectorAll(".game-module")
+    .querySelectorAll(".launch-button")
     .forEach((button) => {
 
         button.addEventListener(
@@ -183,7 +158,7 @@ document
                 if (
                     !gameURL ||
                     gameURL.includes(
-                        "YOUR-USERNAME"
+                        "_CDN_URL"
                     )
                 ) {
 
@@ -195,12 +170,6 @@ document
                 }
 
 
-                /*
-                 * Open immediately because
-                 * browsers can block delayed
-                 * popups.
-                 */
-
                 const gameWindow =
                     window.open(
                         "about:blank",
@@ -211,7 +180,7 @@ document
                 if (!gameWindow) {
 
                     alert(
-                        "The game could not open. Please allow pop-ups for this site."
+                        "Popup blocked. Please allow pop-ups for this site."
                     );
 
                     return;
@@ -219,8 +188,10 @@ document
 
 
                 /*
-                 * Build the blank game page.
-                 */
+                    Create a completely blank
+                    game window and put the game
+                    inside it.
+                */
 
                 gameWindow.document.open();
 
@@ -299,9 +270,7 @@ document
     });
 
 
-/* =========================================================
-   FULLSCREEN
-   ========================================================= */
+/* FULLSCREEN */
 
 const fullscreenButton =
     document.getElementById(
@@ -330,8 +299,7 @@ if (fullscreenButton) {
             } catch (error) {
 
                 console.log(
-                    "Fullscreen unavailable.",
-                    error
+                    "Fullscreen unavailable."
                 );
 
             }
@@ -342,9 +310,7 @@ if (fullscreenButton) {
 }
 
 
-/* =========================================================
-   ORB MOUSE EFFECT
-   ========================================================= */
+/* ORB MOUSE EFFECT */
 
 const orb =
     document.querySelector(".orb");
@@ -358,12 +324,12 @@ if (orb) {
             const x =
                 (event.clientX /
                     window.innerWidth -
-                    0.5) * 12;
+                    0.5) * 10;
 
             const y =
                 (event.clientY /
                     window.innerHeight -
-                    0.5) * -12;
+                    0.5) * -10;
 
             orb.style.transform =
                 `translate(${x}px, ${y}px)`;
@@ -374,9 +340,7 @@ if (orb) {
 }
 
 
-/* =========================================================
-   CONSOLE
-   ========================================================= */
+/* CONSOLE */
 
 console.log(
     "%c NEXUS // GAME LIBRARY ONLINE ",
